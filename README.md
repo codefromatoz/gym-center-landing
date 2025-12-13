@@ -69,6 +69,7 @@ gym-center-landing/
 - Integrazione backend per form di contatto
 - Miglioramento accessibilità (ARIA, focus trap)
 - Animazioni avanzate opzionali
+- Integrazione in Wordpress
 
 ---
 
