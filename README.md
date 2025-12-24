@@ -1,6 +1,6 @@
-# Gym Center – Responsive Landing Page
+# Gym Center – Responsive Website
 
-Landing page per una palestra, progettata e sviluppata con particolare attenzione a **layout**, **UX** e **micro-interazioni**.  
+Sito Web per una palestra, progettata e sviluppata con particolare attenzione a **layout**, **UX** e **micro-interazioni**.  
 Il progetto è pensato come esercizio di front-end “realistico”, con una struttura completa e pronta per essere mostrata in portfolio.
 
 ---

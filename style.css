@@ -182,13 +182,28 @@ p {
 
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+
+  transition-delay: var(--delay, 0s);
 }
 
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Varianti più bold */
+.reveal.fade-left {
+  transform: translateX(-60px);
+}
+
+.reveal.fade-right {
+  transform: translateX(60px);
+}
+
+.reveal.scale-up {
+  transform: scale(0.9);
 }
 
 .pricing .reveal {
@@ -531,6 +546,11 @@ p {
   transform: scale(1);
   opacity: 1;
   z-index: 2;
+  transform: scale(1.05);
+}
+
+.trainer-card.is-active:hover {
+  transform: scale(1.08);
 }
 
 /* immagine */
@@ -744,6 +764,99 @@ p {
 
 .footer-bottom p {
   color: var(--color-muted);
+}
+
+/********************************************
+ * HERO ANIMATIONS
+ ********************************************/
+
+.hero-title {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: heroTitleIn 0.9s ease-out forwards;
+}
+
+.hero-title span {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.hero-title span {
+  animation: heroLineIn 0.9s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  transform: translateY(120%);
+}
+
+.hero-title span:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.hero-title span:nth-child(2) {
+  animation-delay: 0.25s;
+}
+
+@keyframes heroLineIn {
+  to {
+    transform: translateY(0);
+  }
+}
+
+.hero-subtitle {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+.hero-buttons {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease-out forwards;
+  animation-delay: 0.85s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroTitleIn {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroSubtitleIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroButtonsIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero .overlay {
+  animation: heroBgIn 1.2s ease-out forwards;
+}
+
+@keyframes heroBgIn {
+  from {
+    transform: scale(1.05);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 /********************************************
@@ -978,6 +1091,25 @@ p {
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;
+  }
+
+  .hero-title,
+  .hero-subtitle,
+  .hero-buttons,
+  .hero .overlay {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .reveal,
+  .hero-title span,
+  .hero-subtitle,
+  .hero-buttons {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
   }
 }
 

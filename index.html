@@ -57,14 +57,14 @@
     <section class="hero">
       <div class="overlay"></div>
       <div class="hero-content">
-        <h1 class="heading-hero">
-          Trasforma il tuo corpo.<br />Cambia la tua vita.
+        <h1 class="heading-hero hero-title">
+          <span>Trasforma il tuo corpo.</span><br />
+          <span>Cambia la tua vita.</span>
         </h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br />
-          Fusce placerat massa eu odio hendrerit rutrum.<br />
-          Praesent vitae ante sit amet nibh iaculis posuere eget scelerisque
-          quam.
+        <p class="hero-subtitle">
+          Allenamenti su misura, trainer certificati e un ambiente pensato per
+          farti sentire a tuo agio.<br />
+          Qui non segui una moda. Costruisci un percorso.
         </p>
 
         <div class="hero-buttons">
@@ -75,25 +75,25 @@
     </section>
 
     <section class="features">
-      <h1 class="heading-section">PERCHÉ SCEGLIERE NOI</h1>
+      <h1 class="heading-section reveal">PERCHÉ SCEGLIERE NOI</h1>
 
       <div class="features-grid">
-        <div class="feature-card">
+        <div class="feature-card reveal fade-left">
           <img src="assets/features-1.jpg" />
           <span>SALA PESI MODERNA</span>
         </div>
 
-        <div class="feature-card">
+        <div class="feature-card reveal fade-right">
           <img src="assets/features-2.jpg" />
           <span>CORSI DINAMICI</span>
         </div>
 
-        <div class="feature-card">
+        <div class="feature-card reveal fade-left">
           <img src="assets/features-3.jpg" />
           <span>TRAINER CERTIFICATI</span>
         </div>
 
-        <div class="feature-card">
+        <div class="feature-card reveal fade-right">
           <img src="assets/features-4.jpg" />
           <span>APERTI 24/7</span>
         </div>
@@ -101,42 +101,42 @@
     </section>
 
     <section class="section courses">
-      <h2 class="heading-section">I NOSTRI CORSI</h2>
+      <h2 class="heading-section reveal">I NOSTRI CORSI</h2>
 
       <div class="courses-grid">
-        <div class="course-card">
+        <div class="course-card reveal" style="--delay: 0.1s">
           <img src="assets/functional-training.jpg" alt="" />
           <span class="course-title">FUNCTIONAL TRAINING</span>
         </div>
 
-        <div class="course-card">
+        <div class="course-card reveal" style="--delay: 0.2s">
           <img src="assets/crossfit.jpg" alt="" />
           <span class="course-title">CROSSFIT</span>
         </div>
 
-        <div class="course-card">
+        <div class="course-card reveal" style="--delay: 0.3s">
           <img src="assets/yoga.jpg" alt="" />
           <span class="course-title">YOGA</span>
         </div>
 
-        <div class="course-card">
+        <div class="course-card reveal" style="--delay: 0.4s">
           <img src="assets/calisthenics.jpg" alt="" />
           <span class="course-title">CALISTHENICS</span>
         </div>
       </div>
 
-      <div class="courses-cta">
+      <div class="courses-cta reveal">
         <a href="#" class="btn btn-primary">Scopri di più</a>
       </div>
     </section>
 
-    <section class="section trainers">
+    <section class="section trainers reveal">
       <h2 class="heading-section">I NOSTRI TRAINER</h2>
 
       <div class="trainer-carousel-wrapper">
         <button class="carousel-arrow left" id="trainerPrev">❮</button>
 
-        <div class="trainer-carousel" id="trainerCarousel">
+        <div class="trainer-carousel reveal" id="trainerCarousel">
           <!-- TRAINER 1 -->
           <div class="trainer-card is-active" data-index="0">
             <img src="assets/trainer-1.jpg" alt="Alex Rossi" />
@@ -225,7 +225,7 @@
 
       <div class="pricing-grid">
         <!-- PIANO BASE -->
-        <div class="pricing-card reveal" style="--delay: 0.1s">
+        <div class="pricing-card reveal scale-up" style="--delay: 0.1s">
           <h3 class="pricing-title">BASE</h3>
           <p class="pricing-price">€39<span>/mese</span></p>
 
@@ -239,7 +239,10 @@
         </div>
 
         <!-- PIANO PLUS (HIGHLIGHT) -->
-        <div class="pricing-card pricing-featured reveal" style="--delay: 0.2s">
+        <div
+          class="pricing-card pricing-featured reveal scale-up"
+          style="--delay: 0.2s"
+        >
           <h3 class="pricing-title">PLUS</h3>
           <p class="pricing-price">€59<span>/mese</span></p>
 
@@ -253,7 +256,7 @@
         </div>
 
         <!-- PIANO PRO -->
-        <div class="pricing-card reveal" style="--delay: 0.3s">
+        <div class="pricing-card reveal scale-up" style="--delay: 0.3s">
           <h3 class="pricing-title">PRO</h3>
           <p class="pricing-price">€89<span>/mese</span></p>
 
@@ -327,7 +330,13 @@
       </div>
 
       <div class="footer-bottom">
-        <p>© 2025 Gym Center – Tutti i diritti riservati.</p>
+        <p>© 2025 Gym Center - Tutti i diritti riservati</p>
+        <p>
+          <small
+            >website by
+            <a href="https://www.codefromatoz.it">codefromatoz.it</a></small
+          >
+        </p>
       </div>
     </footer>
   </body>
