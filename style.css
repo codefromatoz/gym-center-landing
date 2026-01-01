@@ -133,6 +133,7 @@ p {
 }
 
 .features {
+  padding: var(--section-padding) var(--container-padding);
   padding-top: 40px;
   margin-top: -40px;
 }
@@ -1083,6 +1084,14 @@ p {
 
   .footer-logo {
     font-size: 24px;
+  }
+
+  /**************
+   * ANIMATIONS
+   **************/
+  .reveal.fade-left,
+  .reveal.fade-right {
+    transform: translateY(40px);
   }
 }
 
