@@ -461,6 +461,7 @@ em {
 .courses-grid {
   grid-template-columns: repeat(3, 1fr);
 }
+
 .course-card {
   position: relative;
   min-height: 320px;
@@ -469,25 +470,46 @@ em {
   justify-content: end;
   padding: 28px;
   overflow: hidden;
-  transition: 0.3s ease;
+  background: var(--panel);
+  transition: transform 0.3s ease;
 }
+
 .course-card:hover {
   transform: translateY(-4px);
 }
+
 .course-card::before {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.86) 25%,
-    rgba(0, 0, 0, 0.12)
+    rgba(0, 0, 0, 0.88) 22%,
+    rgba(0, 0, 0, 0.38) 68%,
+    rgba(0, 0, 0, 0.14) 100%
   );
 }
+
+.course-card::after {
+  content: attr(data-letter);
+  position: absolute;
+  right: -8px;
+  bottom: -18px;
+  z-index: 2;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 180px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.045);
+  pointer-events: none;
+  user-select: none;
+}
+
 .course-card > * {
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
+
 .course-card span {
   align-self: flex-start;
   margin-bottom: auto;
@@ -498,24 +520,6 @@ em {
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-}
-.course-orange {
-  background: linear-gradient(160deg, #1a0a00, #4d2000);
-}
-.course-cyan {
-  background: linear-gradient(160deg, #001a1a, #004040);
-}
-.course-purple {
-  background: linear-gradient(160deg, #0d001a, #250040);
-}
-.course-red {
-  background: linear-gradient(160deg, #1a0000, #420000);
-}
-.course-yellow {
-  background: linear-gradient(160deg, #0d0d00, #2a2a00);
-}
-.course-green {
-  background: linear-gradient(160deg, #001200, #003000);
 }
 
 .trainers {
@@ -700,13 +704,38 @@ em {
   border-block: 1px solid var(--panel-border);
 }
 .price-card li {
-  color: #aaa;
-  font-size: 14px;
+  position: relative;
+  padding-left: 30px;
 }
+
 .price-card li::before {
-  content: "âœ“";
-  color: var(--red);
-  margin-right: 10px;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 3px;
+
+  width: 16px;
+  height: 16px;
+
+  border-radius: 50%;
+  border: 1px solid #e61919;
+  background: rgba(230, 25, 25, 0.15);
+}
+
+.price-card li::after {
+  content: "";
+  position: absolute;
+
+  left: 5px;
+  top: 8px;
+
+  width: 5px;
+  height: 3px;
+
+  border-left: 2px solid #e61919;
+  border-bottom: 2px solid #e61919;
+
+  transform: rotate(-45deg);
 }
 .price-card .btn {
   width: 100%;
