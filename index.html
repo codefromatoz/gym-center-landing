@@ -1,344 +1,407 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gym Center</title>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
-
-    <script
-      src="https://kit.fontawesome.com/53f0a5c7d5.js"
-      crossorigin="anonymous"
-    ></script>
-
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- NAVBAR -->
-    <header class="navbar">
-      <div class="logo">GYM CENTER</div>
-      <nav class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">Corsi</a>
-        <a href="#">Trainer</a>
-        <a href="#">Prezzi</a>
-        <a href="#">Contatti</a>
-      </nav>
-      <a class="btn btn-primary small" href="#">Iscriviti</a>
-
-      <!-- Mobile menu icon -->
-      <div
-        class="menu-toggle"
-        id="menu-toggle"
-        aria-label="Apri menu"
-        role="button"
+    <header class="site-header" id="main-nav">
+      <button
+        class="logo nav-trigger"
+        data-target="hero"
+        aria-label="Torna alla home"
       >
-        ☰
-      </div>
+        <span class="logo-mark">G</span>
+        <span class="logo-text">Gym Center</span>
+      </button>
 
-      <!-- MOBILE MENU -->
-      <div class="mobile-menu" id="mobileMenu">
-        <nav class="mobile-menu-links">
-          <a href="#">Home</a>
-          <a href="#">Corsi</a>
-          <a href="#">Trainer</a>
-          <a href="#">Prezzi</a>
-          <a href="#">Contatti</a>
-          <a href="#" class="btn btn-primary">Iscriviti</a>
-        </nav>
+      <nav class="desktop-nav" aria-label="Navigazione principale">
+        <button class="nav-link nav-trigger" data-target="courses">
+          Corsi
+        </button>
+        <button class="nav-link nav-trigger" data-target="trainers">
+          Trainer
+        </button>
+        <button class="nav-link nav-trigger" data-target="pricing">
+          Prezzi
+        </button>
+        <button class="nav-link nav-trigger" data-target="footer">
+          Contatti
+        </button>
+      </nav>
+
+      <div class="header-actions">
+        <button
+          class="btn btn-small nav-trigger desktop-cta"
+          data-target="pricing"
+        >
+          Iscriviti
+        </button>
+        <button
+          class="hamburger"
+          id="menu-open"
+          aria-label="Apri menu"
+          aria-expanded="false"
+        >
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-      <div class="overlay"></div>
-      <div class="hero-content">
-        <h1 class="heading-hero hero-title">
-          <span>Trasforma il tuo corpo.</span><br />
-          <span>Cambia la tua vita.</span>
-        </h1>
-        <p class="hero-subtitle">
-          Allenamenti su misura, trainer certificati e un ambiente pensato per
-          farti sentire a tuo agio.<br />
-          Qui non segui una moda. Costruisci un percorso.
-        </p>
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <button class="menu-close" id="menu-close" aria-label="Chiudi menu">
+        ×
+      </button>
+      <nav class="mobile-nav" aria-label="Navigazione mobile">
+        <button class="mobile-link nav-trigger" data-target="courses">
+          Corsi
+        </button>
+        <button class="mobile-link nav-trigger" data-target="trainers">
+          Trainer
+        </button>
+        <button class="mobile-link nav-trigger" data-target="pricing">
+          Prezzi
+        </button>
+        <button class="mobile-link nav-trigger" data-target="footer">
+          Contatti
+        </button>
+      </nav>
+      <button class="btn nav-trigger" data-target="pricing">
+        Iscriviti ora
+      </button>
+    </div>
 
-        <div class="hero-buttons">
-          <a class="btn btn-primary" href="#">Iscriviti ora</a>
-          <a class="btn btn-secondary" href="#">Scopri i corsi</a>
-        </div>
-      </div>
-    </section>
+    <main>
+      <section class="hero" id="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+          <source src="assets/hero-video.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-grid"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-bg-word">GYM</div>
 
-    <section class="features">
-      <h1 class="heading-section reveal">PERCHÉ SCEGLIERE NOI</h1>
-
-      <div class="features-grid">
-        <div class="feature-card reveal fade-left">
-          <img src="assets/features-1.jpg" />
-          <span>SALA PESI MODERNA</span>
-        </div>
-
-        <div class="feature-card reveal fade-right">
-          <img src="assets/features-2.jpg" />
-          <span>CORSI DINAMICI</span>
-        </div>
-
-        <div class="feature-card reveal fade-left">
-          <img src="assets/features-3.jpg" />
-          <span>TRAINER CERTIFICATI</span>
-        </div>
-
-        <div class="feature-card reveal fade-right">
-          <img src="assets/features-4.jpg" />
-          <span>APERTI 24/7</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section courses">
-      <h2 class="heading-section reveal">I NOSTRI CORSI</h2>
-
-      <div class="courses-grid">
-        <div class="course-card reveal" style="--delay: 0.1s">
-          <img src="assets/functional-training.jpg" alt="" />
-          <span class="course-title">FUNCTIONAL TRAINING</span>
-        </div>
-
-        <div class="course-card reveal" style="--delay: 0.2s">
-          <img src="assets/crossfit.jpg" alt="" />
-          <span class="course-title">CROSSFIT</span>
-        </div>
-
-        <div class="course-card reveal" style="--delay: 0.3s">
-          <img src="assets/yoga.jpg" alt="" />
-          <span class="course-title">YOGA</span>
-        </div>
-
-        <div class="course-card reveal" style="--delay: 0.4s">
-          <img src="assets/calisthenics.jpg" alt="" />
-          <span class="course-title">CALISTHENICS</span>
-        </div>
-      </div>
-
-      <div class="courses-cta reveal">
-        <a href="#" class="btn btn-primary">Scopri di più</a>
-      </div>
-    </section>
-
-    <section class="section trainers reveal">
-      <h2 class="heading-section">I NOSTRI TRAINER</h2>
-
-      <div class="trainer-carousel-wrapper">
-        <button class="carousel-arrow left" id="trainerPrev">❮</button>
-
-        <div class="trainer-carousel reveal" id="trainerCarousel">
-          <!-- TRAINER 1 -->
-          <div class="trainer-card is-active" data-index="0">
-            <img src="assets/trainer-1.jpg" alt="Alex Rossi" />
-            <div class="trainer-info">
-              <h3>Alex Rossi</h3>
-              <p>Functional Coach</p>
-            </div>
-            <div class="trainer-hover">
-              <p>Specializzato in allenamento funzionale e forza.</p>
-              <a href="#" class="btn btn-secondary btn-small">Scopri di più</a>
-            </div>
+        <div class="container hero-content">
+          <div class="eyebrow reveal">
+            <span></span>La tua palestra di riferimento
           </div>
-
-          <!-- TRAINER 2 -->
-          <div class="trainer-card" data-index="1">
-            <img src="assets/trainer-2.jpg" alt="Martina Bianchi" />
-            <div class="trainer-info">
-              <h3>Martina Bianchi</h3>
-              <p>Yoga & Mobility</p>
-            </div>
-            <div class="trainer-hover">
-              <p>Insegnante certificata di yoga e mobilità.</p>
-              <a href="#" class="btn btn-secondary btn-small">Scopri di più</a>
-            </div>
-          </div>
-
-          <!-- TRAINER 3 -->
-          <div class="trainer-card" data-index="2">
-            <img src="assets/trainer-3.jpg" alt="Luca Ferri" />
-            <div class="trainer-info">
-              <h3>Luca Ferri</h3>
-              <p>Personal Trainer</p>
-            </div>
-            <div class="trainer-hover">
-              <p>Percorsi personalizzati per dimagrimento e forza.</p>
-              <a href="#" class="btn btn-secondary btn-small">Scopri di più</a>
-            </div>
-          </div>
-
-          <!-- TRAINER 4 -->
-          <div class="trainer-card" data-index="3">
-            <img src="assets/trainer-4.jpg" alt="Giulia Conti" />
-            <div class="trainer-info">
-              <h3>Giulia Conti</h3>
-              <p>HIIT Coach</p>
-            </div>
-            <div class="trainer-hover">
-              <p>Allenamenti ad alta intensità per massime performance.</p>
-              <a href="#" class="btn btn-secondary btn-small">Scopri di più</a>
-            </div>
-          </div>
-
-          <!-- TRAINER 5 -->
-          <div class="trainer-card" data-index="4">
-            <img src="assets/trainer-5.jpg" alt="Marco De Santis" />
-            <div class="trainer-info">
-              <h3>Marco De Santis</h3>
-              <p>Strength Coach</p>
-            </div>
-            <div class="trainer-hover">
-              <p>Specialista in powerlifting e preparazione atletica.</p>
-              <a href="#" class="btn btn-secondary btn-small">Scopri di più</a>
-            </div>
-          </div>
-
-          <!-- TRAINER 6 -->
-          <div class="trainer-card" data-index="5">
-            <img src="assets/trainer-6.jpg" alt="Elena Rinaldi" />
-            <div class="trainer-info">
-              <h3>Elena Rinaldi</h3>
-              <p>Pilates Trainer</p>
-            </div>
-            <div class="trainer-hover">
-              <p>Postura, core stability e benessere.</p>
-              <a href="#" class="btn btn-secondary btn-small">Scopri di più</a>
-            </div>
+          <h1 class="hero-title">
+            <span>Trasforma</span>
+            <span><em>il tuo</em> corpo</span>
+          </h1>
+          <p class="hero-text reveal">
+            Allenamento d'élite. Personal trainer certificati. Risultati
+            concreti, community che ti spinge ogni giorno.
+          </p>
+          <div class="hero-buttons reveal">
+            <button class="btn nav-trigger" data-target="pricing">
+              Inizia ora →
+            </button>
+            <button class="btn btn-outline nav-trigger" data-target="courses">
+              Scopri i corsi
+            </button>
           </div>
         </div>
 
-        <button class="carousel-arrow right" id="trainerNext">❯</button>
-      </div>
-    </section>
+        <div class="scroll-indicator">Scorri</div>
+      </section>
 
-    <section class="section pricing">
-      <h2 class="heading-section reveal">I NOSTRI PREZZI</h2>
+      <section class="stats" id="stats-section">
+        <div class="container stats-grid">
+          <article class="stat reveal">
+            <strong id="stat-years">0+</strong>
+            <span>Anni di esperienza</span>
+          </article>
+          <article class="stat reveal">
+            <strong id="stat-members">0+</strong>
+            <span>Iscritti attivi</span>
+          </article>
+          <article class="stat reveal">
+            <strong id="stat-trainers">0</strong>
+            <span>Personal trainer</span>
+          </article>
+          <article class="stat reveal">
+            <strong id="stat-classes">0</strong>
+            <span>Corsi disponibili</span>
+          </article>
+        </div>
+      </section>
 
-      <div class="pricing-grid">
-        <!-- PIANO BASE -->
-        <div class="pricing-card reveal scale-up" style="--delay: 0.1s">
-          <h3 class="pricing-title">BASE</h3>
-          <p class="pricing-price">€39<span>/mese</span></p>
+      <section class="section" id="why">
+        <div class="container">
+          <div class="section-heading">
+            <p class="section-kicker reveal">I nostri punti di forza</p>
+            <h2 class="section-title reveal">Perché scegliere <em>noi</em></h2>
+            <p class="section-intro reveal">
+              Ogni dettaglio è pensato per offrirti la migliore esperienza di
+              allenamento possibile.
+            </p>
+          </div>
 
-          <ul class="pricing-features">
-            <li>Accesso sala pesi</li>
-            <li>Orari standard</li>
-            <li>Spogliatoi inclusi</li>
-          </ul>
+          <div class="features-grid">
+            <article class="feature-card reveal">
+              <span class="feature-icon">▰</span>
+              <h3>Attrezzature Pro</h3>
+              <p>
+                Macchine di ultima generazione aggiornate ogni anno. Standard da
+                sala agonistica professionale.
+              </p>
+            </article>
+            <article class="feature-card reveal">
+              <span class="feature-icon">◎</span>
+              <h3>Trainer Certificati</h3>
+              <p>
+                Ogni trainer è certificato e aggiornato costantemente. Il tuo
+                progresso è il loro obiettivo.
+              </p>
+            </article>
+            <article class="feature-card reveal">
+              <span class="feature-icon">◆</span>
+              <h3>Community Forte</h3>
+              <p>
+                Una rete di sportivi che condivide obiettivi, motiva e celebra
+                ogni traguardo insieme.
+              </p>
+            </article>
+            <article class="feature-card reveal">
+              <span class="feature-icon">↗</span>
+              <h3>Risultati Concreti</h3>
+              <p>
+                Piani personalizzati con monitoraggio dei progressi. Il metodo
+                che funziona davvero.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-          <a href="#" class="btn btn-secondary btn-small">Scegli piano</a>
+      <section class="section section-alt" id="courses">
+        <div class="container">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="section-kicker reveal">Programmi di allenamento</p>
+              <h2 class="section-title reveal">I nostri <em>corsi</em></h2>
+            </div>
+            <p class="section-intro reveal">
+              Scegli il programma più adatto ai tuoi obiettivi. Dai principianti
+              agli atleti avanzati.
+            </p>
+          </div>
+
+          <div class="courses-grid">
+            <article class="course-card course-orange reveal">
+              <span>Avanzato</span>
+              <h3>Powerlifting</h3>
+              <p>Forza massimale su panca, squat e stacco.</p>
+            </article>
+            <article class="course-card course-cyan reveal">
+              <span>Tutti i livelli</span>
+              <h3>CrossFit</h3>
+              <p>Forza funzionale, resistenza e agilità ad alta intensità.</p>
+            </article>
+            <article class="course-card course-purple reveal">
+              <span>Principianti</span>
+              <h3>Yoga & Mobility</h3>
+              <p>Flessibilità, equilibrio e recupero muscolare.</p>
+            </article>
+            <article class="course-card course-red reveal">
+              <span>Intermedio</span>
+              <h3>HIIT & Cardio</h3>
+              <p>Brucia i grassi e aumenta l'endurance.</p>
+            </article>
+            <article class="course-card course-yellow reveal">
+              <span>Tutti i livelli</span>
+              <h3>Boxe</h3>
+              <p>Tecnica pugilistica, difesa e condizionamento.</p>
+            </article>
+            <article class="course-card course-green reveal">
+              <span>Principianti</span>
+              <h3>Pilates & Core</h3>
+              <p>Forza del core, postura e controllo corporeo.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section trainers" id="trainers">
+        <div class="container trainers-head">
+          <div>
+            <p class="section-kicker reveal">Il tuo team</p>
+            <h2 class="section-title reveal">I nostri <em>trainer</em></h2>
+          </div>
+          <div class="carousel-buttons">
+            <button id="trainer-prev" aria-label="Trainer precedente">←</button>
+            <button id="trainer-next" aria-label="Trainer successivo">→</button>
+          </div>
         </div>
 
-        <!-- PIANO PLUS (HIGHLIGHT) -->
-        <div
-          class="pricing-card pricing-featured reveal scale-up"
-          style="--delay: 0.2s"
-        >
-          <h3 class="pricing-title">PLUS</h3>
-          <p class="pricing-price">€59<span>/mese</span></p>
-
-          <ul class="pricing-features">
-            <li>Tutti i corsi inclusi</li>
-            <li>Accesso 7/7</li>
-            <li>Programma personalizzato</li>
-          </ul>
-
-          <a href="#" class="btn btn-primary">Scegli piano</a>
+        <div class="trainer-track" id="trainer-track">
+          <article class="trainer-card">
+            <span>M</span>
+            <div>
+              <small>Powerlifting · Forza</small>
+              <h3>Marco Rossi</h3>
+              <p>
+                Specialista in forza massimale e programmazione periodizzata.
+              </p>
+            </div>
+          </article>
+          <article class="trainer-card">
+            <span>S</span>
+            <div>
+              <small>Yoga · Mobility</small>
+              <h3>Sofia Bianchi</h3>
+              <p>Esperta in mobilità articolare e recupero sportivo attivo.</p>
+            </div>
+          </article>
+          <article class="trainer-card">
+            <span>L</span>
+            <div>
+              <small>CrossFit · HIIT</small>
+              <h3>Luca Ferrari</h3>
+              <p>Trasforma la fatica in risultati misurabili.</p>
+            </div>
+          </article>
+          <article class="trainer-card">
+            <span>G</span>
+            <div>
+              <small>Personal training</small>
+              <h3>Giulia Romano</h3>
+              <p>Programmi integrati allenamento e nutrizione.</p>
+            </div>
+          </article>
+          <article class="trainer-card">
+            <span>A</span>
+            <div>
+              <small>Boxe · Cardio</small>
+              <h3>Alessandro Costa</h3>
+              <p>Tecnica, disciplina e condizionamento fisico.</p>
+            </div>
+          </article>
+          <article class="trainer-card">
+            <span>E</span>
+            <div>
+              <small>Pilates · Core</small>
+              <h3>Elena Martini</h3>
+              <p>Riabilitazione e prevenzione degli infortuni.</p>
+            </div>
+          </article>
         </div>
+        <div class="trainer-dots" id="trainer-dots"></div>
+      </section>
 
-        <!-- PIANO PRO -->
-        <div class="pricing-card reveal scale-up" style="--delay: 0.3s">
-          <h3 class="pricing-title">PRO</h3>
-          <p class="pricing-price">€89<span>/mese</span></p>
+      <section class="section section-alt" id="pricing">
+        <div class="container">
+          <div class="section-heading center">
+            <p class="section-kicker reveal">Scegli il tuo piano</p>
+            <h2 class="section-title reveal">Abbonamenti</h2>
+            <p class="section-intro reveal">
+              Nessun vincolo nascosto. Cambia o cancella quando vuoi.
+            </p>
+          </div>
 
-          <ul class="pricing-features">
-            <li>Personal trainer</li>
-            <li>Sessioni illimitate</li>
-            <li>Supporto dedicato</li>
-          </ul>
-
-          <a href="#" class="btn btn-secondary btn-small">Scegli piano</a>
+          <div class="pricing-grid">
+            <article class="price-card reveal">
+              <h3>Starter</h3>
+              <strong>€49 <span>/mese</span></strong>
+              <p>Perfetto per iniziare ad allenarti con costanza.</p>
+              <ul>
+                <li>Accesso sala pesi</li>
+                <li>2 corsi a settimana</li>
+                <li>Scheda base</li>
+              </ul>
+              <button class="btn btn-outline">Scegli Starter</button>
+            </article>
+            <article class="price-card featured reveal">
+              <div class="badge">Più scelto</div>
+              <h3>Pro</h3>
+              <strong>€89 <span>/mese</span></strong>
+              <p>Per chi vuole risultati seri e un percorso guidato.</p>
+              <ul>
+                <li>Accesso illimitato</li>
+                <li>Tutti i corsi inclusi</li>
+                <li>1 PT al mese</li>
+                <li>Monitoraggio progressi</li>
+              </ul>
+              <button class="btn">Scegli Pro</button>
+            </article>
+            <article class="price-card reveal">
+              <h3>Elite</h3>
+              <strong>€139 <span>/mese</span></strong>
+              <p>
+                L'esperienza premium totale per chi non accetta compromessi.
+              </p>
+              <ul>
+                <li>Tutto di Pro</li>
+                <li>PT dedicato</li>
+                <li>Analisi corporea mensile</li>
+                <li>Accesso 24/7</li>
+              </ul>
+              <button class="btn btn-outline">Scegli Elite</button>
+            </article>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section final-cta">
-      <div class="final-cta-content reveal">
-        <h2 class="final-cta-title">Inizia oggi il tuo percorso</h2>
+      <section class="cta-section">
+        <div class="container cta-inner">
+          <div>
+            <p class="section-kicker reveal">Fai il primo passo</p>
+            <h2 class="cta-title reveal">
+              Pronto a superare i tuoi <em>limiti</em>?
+            </h2>
+          </div>
+          <div>
+            <button class="btn nav-trigger" data-target="pricing">
+              Inizia ora — primo mese gratis
+            </button>
+            <p>Nessun impegno. Cancella in qualsiasi momento.</p>
+          </div>
+        </div>
+      </section>
+    </main>
 
-        <p class="final-cta-text">
-          Il primo passo è sempre il più difficile.<br />
-          Noi siamo qui per accompagnarti in ogni fase.
-        </p>
-
-        <a href="#" class="btn btn-primary"> Prenota una prova gratuita </a>
-      </div>
-    </section>
-
-    <section class="cta-image"></section>
-
-    <footer class="footer">
-      <div class="footer-content">
-        <!-- COLONNA 1: LOGO + DESCRIZIONE -->
-        <div class="footer-col">
-          <h3 class="footer-logo">GYM CENTER</h3>
+    <footer class="footer" id="footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="logo footer-logo">
+            <span class="logo-mark">G</span
+            ><span class="logo-text">Gym Center</span>
+          </div>
           <p>
-            Gym Center srl <br />
-            P.IVA 12345678901 <br />
-            Sede legale: Via xxx 5, 50127 Firenze
+            La palestra che trasforma le ambizioni in risultati. Allenamento
+            professionale, community reale.
           </p>
         </div>
-
-        <!-- COLONNA 2: LINK UTILI -->
-        <div class="footer-col">
-          <h4>Link Utili</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Corsi</a></li>
-            <li><a href="#">Trainer</a></li>
-            <li><a href="#">Prezzi</a></li>
-            <li><a href="#">Contatti</a></li>
-          </ul>
+        <div>
+          <h3>Corsi</h3>
+          <a href="#courses">Powerlifting</a><a href="#courses">CrossFit</a
+          ><a href="#courses">Yoga</a><a href="#courses">HIIT</a>
         </div>
-
-        <!-- COLONNA 3: CONTATTI -->
-        <div class="footer-col">
-          <h4>Contatti</h4>
-          <ul>
-            <li>
-              <i class="fa-solid fa-location-dot"></i> Via Roma 123, Firenze
-            </li>
-            <li><i class="fa-solid fa-phone"></i> +39 320 000 0000</li>
-            <li><i class="fa-solid fa-envelope"></i> info@gymcenter.it</li>
-          </ul>
-
-          <div class="footer-socials">
-            <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
-          </div>
+        <div>
+          <h3>Palestra</h3>
+          <a href="#why">Chi siamo</a><a href="#trainers">Trainer</a
+          ><a href="#pricing">Abbonamenti</a>
+        </div>
+        <div>
+          <h3>Contatti</h3>
+          <p>Via dello Sport 12<br />20100 Milano, MI</p>
+          <p>Lun–Ven: 06:00–23:00<br />Sab–Dom: 08:00–21:00</p>
+          <p>+39 02 1234 5678</p>
         </div>
       </div>
-
-      <div class="footer-bottom">
-        <p>© 2025 Gym Center - Tutti i diritti riservati</p>
-        <p>
-          <small
-            >website by
-            <a href="https://www.codefromatoz.it">codefromatoz.it</a></small
-          >
-        </p>
+      <div class="container footer-bottom">
+        © 2026 Gym Center. Tutti i diritti riservati.
       </div>
     </footer>
+
+    <script src="script.js"></script>
   </body>
-  <script src="script.js"></script>
 </html>
